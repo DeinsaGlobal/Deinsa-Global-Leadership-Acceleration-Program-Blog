@@ -13,9 +13,13 @@
     "prepare": "cd .. && husky install leadership-blog/.husky"
   },
   "dependencies": {
+    "@firebase/firestore": "^4.7.10",
     "babel-plugin-react-compiler": "^19.0.0-beta-aeaed83-20250323",
+    "bcrypt": "^5.1.1",
     "cloudinary": "^2.6.0",
+    "firebase": "^11.6.0",
     "next": "15.2.4",
+    "next-auth": "^4.24.11",
     "next-cloudinary": "^6.16.0",
     "next-intl": "^4.0.2",
     "next-themes": "^0.4.6",
@@ -32,6 +36,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@tailwindcss/postcss": "^4",
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
