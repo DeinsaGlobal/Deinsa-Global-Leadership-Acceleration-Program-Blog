@@ -29,9 +29,6 @@
     <img src="https://appexchange.salesforce.com/image_host/54d359f8-a104-40ee-b94c-91488f80db81.png" alt="cloudinary" width="60" height="40"/>
   </a>  
     </a>
-  <a href="https://oauth.net/2/" target="_blank" rel="noreferrer">
-    <img src="https://oauth.net/images/oauth-logo-square.png" alt="oauth" width="40" height="40"/>
-  </a>
 </p>
 
 
@@ -242,7 +239,7 @@ The Leadership Blog is built using the following architecture and technologies:
 - Database: Firebase
 - Hosting: Vercel
 - Image Hosting: Cloudinary
-- Authentication: OAuth 2.0
+- Authentication: NextAuth
 > [!NOTE] 
 > The Atomic Design pattern organizes components into atoms, molecules, organisms, templates, and pages, creating a scalable and maintainable component hierarchy.
 
