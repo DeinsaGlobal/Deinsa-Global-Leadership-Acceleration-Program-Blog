@@ -49,3 +49,13 @@ docker-compose.override.yml
 
 # Storybook
 *storybook.log
+
+.husky/*
+!.husky/_/*
+!.husky/_/husky.sh
+!.husky/.commit-msg
+!.husky/pre-commit
+!.husky/commit-msg
+lint-staged.config.js
+eslint.config.mjs
+.prettierrc
