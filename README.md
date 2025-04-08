@@ -28,7 +28,6 @@
   <a href="https://cloudinary.com/" target="_blank" rel="noreferrer">
     <img src="https://appexchange.salesforce.com/image_host/54d359f8-a104-40ee-b94c-91488f80db81.png" alt="cloudinary" width="60" height="40"/>
   </a>  
-    </a>
 </p>
 
 
@@ -37,22 +36,22 @@ Welcome to the fullstack repository of the Leadership Blog, a web application de
 The purpose of the blog is to provide a platform for the Deinsa's interns to share their projects and experiences.
 
 ## Table of Contents
-- [Getting Started](#getting-started)
-  - [Development Environment](#development-environment)
-  - [Production Environment](#production-environment)
-  - [Component Documentation](#component-documentation)
-- [Repository Rules](#repository-rules)
-  - [ESLint Rules](#eslint-rules)
-  - [Gitflow](#gitflow)
-    - [Main Branches](#main-branches)
-    - [Workflow](#workflow)
-    - [Hotfixes](#hotfixes)
-  - [Commit Rules](#commit-rules)
-  - [Branch Rules](#branch-rules)
-- [Architecture](#architecture)
-- [Features](#features)
-  - [Theming](#theming)
-  - [Internationalization](#internationalization)
+  - [Getting Started](#getting-started)
+    - [Development Environment](#development-environment)
+    - [Production Environment](#production-environment)
+    - [Component Documentation](#component-documentation)
+  - [Repository Rules](#repository-rules)
+    - [ESLint Rules](#eslint-rules)
+    - [Gitflow](#gitflow)
+      - [Main Branches](#main-branches)
+      - [Workflow](#workflow)
+      - [Hotfixes](#hotfixes)
+    - [Commit Rules](#commit-rules)
+    - [Branch Rules](#branch-rules)
+  - [Architecture](#architecture)
+  - [Features](#features)
+    - [Theming](#theming)
+    - [Internationalization](#internationalization)
 
 ## Getting Started
 
