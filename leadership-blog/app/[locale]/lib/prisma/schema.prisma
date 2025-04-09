@@ -25,6 +25,7 @@ model Post {
   createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamp()
   departments    PostDepartment[]
   media          Media[]
+  topPost        TopPost?        
 
   @@map("posts")
 }
@@ -59,6 +60,15 @@ model Media {
   post     Post   @relation(fields: [postId], references: [id])
 
   @@map("media")
+}
+
+model TopPost {
+  postId   Int      @id @map("post_id")
+  position Int
+  addedAt  DateTime @default(now()) @map("added_at") @db.Timestamp()
+  post     Post     @relation(fields: [postId], references: [id])
+
+  @@map("top_posts")
 }
 
 enum Type {
