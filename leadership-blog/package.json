@@ -7,21 +7,24 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "studio": "set PRISMA_HIDE_UPDATE_MESSAGE=1 && npx prisma studio --schema app/[locale]/lib/prisma/schema.prisma",
+    "generate": "set PRISMA_HIDE_UPDATE_MESSAGE=1 && prisma generate --schema app/[locale]/lib/prisma/schema.prisma",
     "storybook": "storybook dev -p 6006",
     "docker": "docker-compose up",
     "docker:dev": "docker-compose -f docker-compose.dev.yml up",
-    "prepare": "cd .. && husky install leadership-blog/.husky"
+    "prepare": "cd .. && husky install leadership-blog/.husky",
+    "postinstall": "npm run generate"
   },
   "dependencies": {
-    "@firebase/firestore": "^4.7.10",
+    "@prisma/client": "^6.6.0",
     "babel-plugin-react-compiler": "^19.0.0-beta-aeaed83-20250323",
     "cloudinary": "^2.6.0",
-    "firebase": "^11.6.0",
     "next": "15.2.4",
     "next-auth": "^4.24.11",
     "next-cloudinary": "^6.16.0",
     "next-intl": "^4.0.2",
     "next-themes": "^0.4.6",
+    "prisma": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
