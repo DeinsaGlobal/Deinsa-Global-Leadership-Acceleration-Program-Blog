@@ -19,8 +19,8 @@
   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/npmjs/npmjs-ar21.svg" alt="npm" width="60" height="40"/>
   </a>
-  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>
+  <a href="https://www.pingcap.com/" target="_blank" rel="noreferrer">
+    <img src="https://cdn.prod.website-files.com/6064b31ff49a2d31e0493af1/67653498629c6b48d11e52a2_icon.svg" alt="TiDB" width="40" height="40"/>
   </a>
   <a href="https://vercel.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" alt="vercel" width="40" height="40"/>
@@ -235,7 +235,7 @@ The Leadership Blog is built using the following architecture and technologies:
 - UI Library: React
 - CSS Framework: Tailwind CSS
 - Documentation & Testing: Storybook
-- Database: Firebase
+- Database: TiDB MySQL
 - Hosting: Vercel
 - Image Hosting: Cloudinary
 - Authentication: NextAuth
