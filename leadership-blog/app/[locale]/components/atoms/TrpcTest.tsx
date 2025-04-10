@@ -2,39 +2,91 @@
 
 import { trpc } from '@/_trpc/client';
 import { useState } from 'react';
+import Post from '@/types/post.types';
 
-export default function TrpcTest() {
-  const [name, setName] = useState('');
-  const hello = trpc.hello.useQuery({ name: name || undefined });
+export default function CreatePostTest() {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [portraitImage, setPortraitImage] = useState('');
+  const [result, setResult] = useState<Post | null>(null);
+
+  const createPostMutation = trpc.createPost.useMutation({
+    onSuccess: (data) => {
+      setResult({ ...data, createdAt: new Date(data.createdAt) });
+      setTitle('');
+      setContent('');
+      setPortraitImage('');
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    createPostMutation.mutate({
+      title,
+      content,
+      portraitImage,
+    });
+  };
 
   return (
-    <div className="rounded-lg border p-4 shadow-sm">
-      <h2 className="mb-4 text-xl font-bold">tRPC Test</h2>
+    <div className="mx-auto max-w-md p-4">
+      <h1 className="mb-4 text-xl font-bold">Create New Post</h1>
 
-      <div className="mb-4">
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter your name"
-          className="w-full rounded border px-3 py-2"
-        />
-      </div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="mb-1 block">Title:</label>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="w-full rounded border p-2"
+            required
+          />
+        </div>
 
-      <div className="rounded bg-gray-100 p-3">
-        {hello.isLoading ? (
-          <p>Loading...</p>
-        ) : hello.error ? (
-          <p className="text-red-500">Error: {hello.error.message}</p>
-        ) : (
-          <div>
-            <p className="font-medium text-black">{hello.data?.greeting}</p>
-            <p className="text-sm text-gray-500">
-              Server time: {hello.data?.timestamp}
-            </p>
-          </div>
-        )}
-      </div>
+        <div>
+          <label className="mb-1 block">Content:</label>
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            className="w-full rounded border p-2"
+            rows={4}
+          />
+        </div>
+
+        <div>
+          <label className="mb-1 block">Portrait Image URL:</label>
+          <input
+            type="text"
+            value={portraitImage}
+            onChange={(e) => setPortraitImage(e.target.value)}
+            className="w-full rounded border p-2"
+            placeholder="https://example.com/image.jpg"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+          disabled={createPostMutation.isPending}
+        >
+          {createPostMutation.isPending ? 'Creating...' : 'Create Post'}
+        </button>
+      </form>
+
+      {createPostMutation.error && (
+        <div className="mt-4 rounded bg-red-100 p-3 text-red-700">
+          Error: {createPostMutation.error.message}
+        </div>
+      )}
+
+      {result && (
+        <div className="mt-4 rounded bg-green-100 p-3 text-green-700">
+          <h2 className="font-bold">Post Created Successfully!</h2>
+          <p>ID: {result.id}</p>
+          <p>Title: {result.title}</p>
+        </div>
+      )}
     </div>
   );
 }

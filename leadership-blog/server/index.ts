@@ -3,17 +3,22 @@ import { z } from 'zod';
 
 // Define your router
 export const appRouter = router({
-  hello: procedure
+  createPost: procedure
     .input(
       z.object({
-        name: z.string().optional(),
+        title: z.string(),
+        content: z.string().optional(),
+        portraitImage: z.string().optional(),
       }),
     )
-    .query(({ input }) => {
-      return {
-        greeting: `Hello ${input.name ?? 'World'}!`,
-        timestamp: new Date().toISOString(),
-      };
+    .mutation(async ({ ctx, input }) => {
+      return await ctx.prisma.post.create({
+        data: {
+          title: input.title,
+          content: input.content,
+          portraitImage: input.portraitImage,
+        },
+      });
     }),
 });
 

@@ -1,4 +1,4 @@
-import { AdminUser } from '@/types/user.type';
+import { AdminUser } from '@/types/user.types';
 
 export async function verifyCredentials(
   email: string,
