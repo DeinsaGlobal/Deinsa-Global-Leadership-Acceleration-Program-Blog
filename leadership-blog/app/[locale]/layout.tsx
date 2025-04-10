@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/lib/utils/ThemeProvider';
-import { AuthProvider } from '@/lib/utils/AuthProvider';
+//import { AuthProvider } from '@/lib/utils/AuthProvider';
+import { TRPCProvider } from '@/_trpc/Provider';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
@@ -40,11 +41,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <NextIntlClientProvider>{children}</NextIntlClientProvider>
-          </ThemeProvider>
-        </AuthProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextIntlClientProvider>
+            <TRPCProvider>{children}</TRPCProvider>
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
