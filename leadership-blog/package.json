@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev ",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,14 +13,22 @@
     "prepare": "cd .. && husky install leadership-blog/.husky"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-slot": "^1.1.2",
     "babel-plugin-react-compiler": "^19.0.0-beta-aeaed83-20250323",
+    "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.6.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.487.0",
     "next": "15.2.4",
+    "next-auth": "^4.24.11",
     "next-cloudinary": "^6.16.0",
     "next-intl": "^4.0.2",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.2.0",
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
