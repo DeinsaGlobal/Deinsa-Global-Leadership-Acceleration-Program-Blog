@@ -8,6 +8,7 @@ export const createContext = async (opts: FetchCreateContextFnOptions) => {
   return {
     prisma: connection,
     req: opts.req,
+    ...(opts.info?.connectionParams && { links: opts.info.connectionParams }),
   };
 };
 
