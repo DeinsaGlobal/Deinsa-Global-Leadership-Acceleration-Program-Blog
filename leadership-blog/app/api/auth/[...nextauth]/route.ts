@@ -25,7 +25,7 @@ const handler = NextAuth({
         // For example, check against a database or an API
 
         if (email === envEmail && password === envPassword) {
-          return { id: '1', name: 'Admin', email: 'admin@email.com' }; //this is an example
+          return { id: '1', name: 'Admin', email: envEmail as string }; //this is an example
         } else {
           return null;
         }
@@ -33,11 +33,13 @@ const handler = NextAuth({
     }),
   ],
   session: {
-    strategy: 'jwt', // Use JWT for session management without DB
+    strategy: 'jwt', // Use JWT for session management without DB, this will be changed when we add a database
   },
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/auth/signin', //This line needs to be changed to the correct path for your sign-in page
   },
+  //Callbacks are used to redirect the user to the correct locale based on the URL
+  //This is useful for internationalization (i18n) in Next.js applications
   callbacks: {
     async redirect({ baseUrl, url }) {
       const localeMatch = url.match(/\/([a-z]{2}(-[A-Z]{2})?)(\/|$)/);
