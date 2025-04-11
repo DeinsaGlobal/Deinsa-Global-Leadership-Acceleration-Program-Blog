@@ -1,37 +1,30 @@
 'use client';
 
-import { trpc } from '@/_trpc/client';
 import { useState } from 'react';
-import Post from '@/types/post.types';
+import { useCreatePost } from '@/hooks/post/useCreatePost';
 
 export default function CreatePostTest() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [portraitImage, setPortraitImage] = useState('');
-  const [result, setResult] = useState<Post | null>(null);
-
-  const createPostMutation = trpc.createPost.useMutation({
-    onSuccess: (data) => {
-      setResult({ ...data, createdAt: new Date(data.createdAt) });
-      setTitle('');
-      setContent('');
-      setPortraitImage('');
-    },
-  });
+  const { result, isLoading, error, createPost } = useCreatePost();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    createPostMutation.mutate({
+    createPost({
       title,
       content,
       portraitImage,
     });
+    // Clear form fields after submission
+    setTitle('');
+    setContent('');
+    setPortraitImage('');
   };
 
   return (
     <div className="mx-auto max-w-md p-4">
       <h1 className="mb-4 text-xl font-bold">Create New Post</h1>
-
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="mb-1 block">Title:</label>
@@ -68,18 +61,16 @@ export default function CreatePostTest() {
         <button
           type="submit"
           className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-          disabled={createPostMutation.isPending}
+          disabled={isLoading}
         >
-          {createPostMutation.isPending ? 'Creating...' : 'Create Post'}
+          {isLoading ? 'Creating...' : 'Create Post'}
         </button>
       </form>
-
-      {createPostMutation.error && (
+      {error && (
         <div className="mt-4 rounded bg-red-100 p-3 text-red-700">
-          Error: {createPostMutation.error.message}
+          Error: {error.message}
         </div>
       )}
-
       {result && (
         <div className="mt-4 rounded bg-green-100 p-3 text-green-700">
           <h2 className="font-bold">Post Created Successfully!</h2>
