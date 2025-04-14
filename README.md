@@ -19,8 +19,8 @@
   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/npmjs/npmjs-ar21.svg" alt="npm" width="60" height="40"/>
   </a>
-  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>
+  <a href="https://www.pingcap.com/" target="_blank" rel="noreferrer">
+    <img src="https://cdn.prod.website-files.com/6064b31ff49a2d31e0493af1/67653498629c6b48d11e52a2_icon.svg" alt="TiDB" width="40" height="40"/>
   </a>
   <a href="https://vercel.com/" target="_blank" rel="noreferrer">
     <img src="https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg" alt="vercel" width="40" height="40"/>
@@ -28,7 +28,6 @@
   <a href="https://cloudinary.com/" target="_blank" rel="noreferrer">
     <img src="https://appexchange.salesforce.com/image_host/54d359f8-a104-40ee-b94c-91488f80db81.png" alt="cloudinary" width="60" height="40"/>
   </a>  
-    </a>
 </p>
 
 
@@ -37,22 +36,22 @@ Welcome to the fullstack repository of the Leadership Blog, a web application de
 The purpose of the blog is to provide a platform for the Deinsa's interns to share their projects and experiences.
 
 ## Table of Contents
-- [Getting Started](#getting-started)
-  - [Development Environment](#development-environment)
-  - [Production Environment](#production-environment)
-  - [Component Documentation](#component-documentation)
-- [Repository Rules](#repository-rules)
-  - [ESLint Rules](#eslint-rules)
-  - [Gitflow](#gitflow)
-    - [Main Branches](#main-branches)
-    - [Workflow](#workflow)
-    - [Hotfixes](#hotfixes)
-  - [Commit Rules](#commit-rules)
-  - [Branch Rules](#branch-rules)
-- [Architecture](#architecture)
-- [Features](#features)
-  - [Theming](#theming)
-  - [Internationalization](#internationalization)
+  - [Getting Started](#getting-started)
+    - [Development Environment](#development-environment)
+    - [Production Environment](#production-environment)
+    - [Component Documentation](#component-documentation)
+  - [Repository Rules](#repository-rules)
+    - [ESLint Rules](#eslint-rules)
+    - [Gitflow](#gitflow)
+      - [Main Branches](#main-branches)
+      - [Workflow](#workflow)
+      - [Hotfixes](#hotfixes)
+    - [Commit Rules](#commit-rules)
+    - [Branch Rules](#branch-rules)
+  - [Architecture](#architecture)
+  - [Features](#features)
+    - [Theming](#theming)
+    - [Internationalization](#internationalization)
 
 ## Getting Started
 
@@ -236,7 +235,7 @@ The Leadership Blog is built using the following architecture and technologies:
 - UI Library: React
 - CSS Framework: Tailwind CSS
 - Documentation & Testing: Storybook
-- Database: Firebase
+- Database: TiDB MySQL
 - Hosting: Vercel
 - Image Hosting: Cloudinary
 - Authentication: NextAuth

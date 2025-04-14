@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/lib/utils/ThemeProvider';
+import { AuthProvider } from '@/lib/utils/AuthProvider';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import './globals.css';
-import SessionAuthProvider from './context/SessionAuthProvider';
+// import SessionAuthProvider from './context/SessionAuthProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -40,11 +41,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionAuthProvider>
+        <AuthProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <NextIntlClientProvider>{children}</NextIntlClientProvider>
           </ThemeProvider>
-        </SessionAuthProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -26,7 +26,7 @@
       "@/consts/*": ["app/[locale]/lib/consts/*"],
       "@/utils/*": ["app/[locale]/lib/utils/*"],
       "@/hooks/*": ["app/[locale]/hooks/*"],
-      "@/types/*": ["app/[locale]/types/*"],
+      "@/types/*": ["./types/*"],
       "@/services/*": ["app/[locale]/services/*"],
       "@/assets/*": ["app/[locale]/assets/*"],
       "@/lib/*": ["app/[locale]/lib/*"],

@@ -7,12 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "studio": "set PRISMA_HIDE_UPDATE_MESSAGE=1 && npx prisma studio --schema app/[locale]/lib/prisma/schema.prisma",
+    "generate": "set PRISMA_HIDE_UPDATE_MESSAGE=1 && prisma generate --schema app/[locale]/lib/prisma/schema.prisma",
     "storybook": "storybook dev -p 6006",
     "docker": "docker-compose up",
     "docker:dev": "docker-compose -f docker-compose.dev.yml up",
-    "prepare": "cd .. && husky install leadership-blog/.husky"
+    "prepare": "cd .. && husky install leadership-blog/.husky",
+    "postinstall": "npm run generate"
   },
   "dependencies": {
+    "@prisma/client": "^6.6.0",
     "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "babel-plugin-react-compiler": "^19.0.0-beta-aeaed83-20250323",
@@ -25,6 +29,7 @@
     "next-cloudinary": "^6.16.0",
     "next-intl": "^4.0.2",
     "next-themes": "^0.4.6",
+    "prisma": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.2.0",
@@ -54,6 +59,8 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
+    "prettier-plugin-prisma": "^5.0.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "storybook": "^8.6.12",
     "tailwindcss": "^4",
     "typescript": "^5"

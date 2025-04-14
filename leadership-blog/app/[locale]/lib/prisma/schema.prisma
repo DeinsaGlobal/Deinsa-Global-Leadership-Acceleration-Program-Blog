@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../../../node_modules/prisma_generated"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Department {
+  id            Int                @id @default(autoincrement())
+  name          String             @db.VarChar(100)
+  collaborators Collaborator[]
+  posts         PostDepartment[]
+
+  @@map("departments")
+}
+
+model Post {
+  id             Int              @id @default(autoincrement())
+  title          String?          @db.VarChar(255)
+  content        String?          @db.Text
+  portraitImage  String?          @map("portrait_image") @db.VarChar(2083)
+  createdAt      DateTime         @default(now()) @map("created_at") @db.Timestamp()
+  departments    PostDepartment[]
+  media          Media[]
+  topPost        TopPost?        
+
+  @@map("posts")
+}
+
+model Collaborator {
+  id           Int        @id @default(autoincrement())
+  name         String     @db.VarChar(255)
+  image        String?    @db.VarChar(2083)
+  departmentId Int        @map("department_id")
+  createdAt    DateTime   @default(now()) @map("created_at") @db.Timestamp()
+  department   Department @relation(fields: [departmentId], references: [id])
+
+  @@map("collaborators")
+}
+
+model PostDepartment {
+  postId       Int        @map("post_id")
+  departmentId Int        @map("department_id")
+  post         Post       @relation(fields: [postId], references: [id])
+  department   Department @relation(fields: [departmentId], references: [id])
+
+  @@id([postId, departmentId])
+  @@map("post_department")
+}
+
+model Media {
+  id       Int    @id @default(autoincrement())
+  postId   Int    @map("post_id")
+  url      String @db.VarChar(2083)
+  type     Type
+  position Int
+  post     Post   @relation(fields: [postId], references: [id])
+
+  @@map("media")
+}
+
+model TopPost {
+  postId   Int      @id @map("post_id")
+  position Int
+  addedAt  DateTime @default(now()) @map("added_at") @db.Timestamp()
+  post     Post     @relation(fields: [postId], references: [id])
+
+  @@map("top_posts")
+}
+
+enum Type {
+  image
+  video
+}
