@@ -7,15 +7,16 @@ export const authConfig: NextAuthOptions = {
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
-        username: { label: 'Username', type: 'text' },
+        email: { label: 'Email', type: 'text' },
+        //username: { label: 'Username', type: 'text' }, // Uncomment if you want to use username, but we need email, not username.
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        const { username, password } = credentials ?? {};
+        const { email, password } = credentials ?? {};
 
         if (
-          username === process.env.AUTH_USERNAME &&
-          password === process.env.AUTH_PASSWORD
+          email === process.env.AUTH_USER_EMAIL &&
+          password === process.env.AUTH_USER_PASSWORD
         ) {
           return {
             id: process.env.AUTH_USER_ID,
@@ -46,6 +47,15 @@ export const authConfig: NextAuthOptions = {
         session.user.role = token.role;
       }
       return session;
+    },
+    /*
+     Callbacks are used to redirect the user to the correct locale based on the URL
+     This is useful for internationalization (i18n) in Next.js applications
+    */
+    async redirect({ baseUrl, url }) {
+      const localeMatch = url.match(/\/([a-z]{2}(-[A-Z]{2})?)(\/|$)/);
+      const locale = localeMatch ? localeMatch[1] : 'en'; // Default to 'en' if no locale is found
+      return `${baseUrl}/${locale}`;
     },
   },
   session: {
