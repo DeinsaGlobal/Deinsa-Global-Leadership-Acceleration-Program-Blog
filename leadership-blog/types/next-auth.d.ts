@@ -1,5 +1,8 @@
 import { DefaultSession, DefaultUser } from 'next-auth';
 import { DefaultJWT } from 'next-auth/jwt';
+/*
+  We extend the default NextAuth.js session and user types to include our custom properties.
+*/
 
 declare module 'next-auth' {
   interface Session {
