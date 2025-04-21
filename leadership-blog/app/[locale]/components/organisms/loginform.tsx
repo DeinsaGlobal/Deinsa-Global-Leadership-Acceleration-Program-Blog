@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 
 export const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState('correo@deinsaglobal.com');
+  const [email, setEmail] = useState(''); //correo@deinsaglobal.com
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
@@ -21,9 +21,10 @@ export const LoginForm: React.FC = () => {
 
     // Aquí se simula el inicio de sesión
     const response = await signIn('credentials', {
-      redirect: false,
-      username: email,
+      redirect: false, //new
+      email,
       password,
+      // callbackUrl: '/dashboard', //new
     });
 
     if (response?.error) {
@@ -67,6 +68,7 @@ export const LoginForm: React.FC = () => {
               id="email"
               type="email"
               placeholder="correo@deinsa.com"
+              style={{ color: 'black', backgroundColor: 'white' }}
               required
             />
             <FormField
@@ -75,6 +77,7 @@ export const LoginForm: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               id="password"
               type="password"
+              style={{ color: 'black', backgroundColor: 'white' }}
               required
               // extraContent={
               //   <Link
