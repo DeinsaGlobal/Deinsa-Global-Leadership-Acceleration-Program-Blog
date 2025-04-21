@@ -12,12 +12,12 @@ export default function Dashboard() {
   }
 
   if (!session) {
-    router.push('/auth/login');
+    router.push('/login'); //This throw error, check later
     return null;
   }
 
   const handleSignOut = () => {
-    void signOut({ callbackUrl: '/auth/login' });
+    void signOut({ callbackUrl: '/login' });
   };
 
   return (
@@ -25,7 +25,7 @@ export default function Dashboard() {
       <h1>Welcome, {session.user?.name ?? 'User'}</h1>
       <button
         onClick={handleSignOut}
-        className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
+        className="mt-4 rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
       >
         Cerrar sesión
       </button>
