@@ -9,8 +9,7 @@ interface AuthTemplateProps {
 }
 
 export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
-  const title = useTranslations('Login');
-  const titleDescription = useTranslations('Login');
+  const t = useTranslations('Login');
 
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-2">
@@ -35,12 +34,8 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
                 className="object-contain"
               />
             </div>
-            <h1 className="mb-4 text-4xl font-bold text-white">
-              {title('title')}
-            </h1>
-            <p className="text-lg text-white/80">
-              {titleDescription('titleDescription')}
-            </p>
+            <h1 className="mb-4 text-4xl font-bold text-white">{t('title')}</h1>
+            <p className="text-lg text-white/80">{t('titleDescription')}</p>
           </div>
         </div>
       </div>
