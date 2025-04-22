@@ -1,5 +1,14 @@
 {
   "Home": {
     "title": "Bienvenue sur le blog du programme d'accélération du leadership!"
+  },
+  "Login": {
+    "title": "Bienvenue sur la plateforme mondiale de Deinsa",
+    "titleDescription": "Un espace où chaque département partage ses projets, outils et avancées.",
+    "login": "Connexion",
+    "loginDescription": "Veuillez entrer vos identifiants pour accéder à la plateforme.",
+    "email": "Email",
+    "password": "Mot de passe",
+    "loginButton": "Connexion"
   }
 }

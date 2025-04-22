@@ -1,5 +1,14 @@
 {
   "Home": {
     "title": "Welcome to the Leadership Acceleration Program Blog!"
+  },
+  "Login": {
+    "title": "Welcome to the Deinsa Global plataform",
+    "titleDescription": "A space where each department shares its projects, tools and progress.",
+    "login": "Login",
+    "loginDescription": "Please enter your credentials to access the platform.",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Login"
   }
 }
