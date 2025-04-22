@@ -2,12 +2,16 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
 }
 
 export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
+  const title = useTranslations('Login');
+  const titleDescription = useTranslations('Login');
+
   return (
     <div className="grid min-h-screen w-full lg:grid-cols-2">
       {/* Image Section */}
@@ -32,11 +36,10 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
               />
             </div>
             <h1 className="mb-4 text-4xl font-bold text-white">
-              Bienvenido a la plataforma de Deinsa Global
+              {title('title')}
             </h1>
             <p className="text-lg text-white/80">
-              Un espacio donde cada departamento comparte sus proyectos,
-              herramientas y avances.
+              {titleDescription('titleDescription')}
             </p>
           </div>
         </div>
