@@ -106,13 +106,10 @@ export const LoginForm: React.FC = () => {
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
             </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-gray-500">
-                O continúa con
-              </span>
-            </div>
           </div>
 
+          {/*
+             for now we are not using this, but we can use it later if we want to add social login          
           <div className="flex justify-center gap-4">
             <button className="flex w-full items-center justify-center rounded border border-gray-300 py-2">
               <Image
@@ -134,14 +131,17 @@ export const LoginForm: React.FC = () => {
               />
               Microsoft
             </button>
-          </div>
+          </div>*/}
 
-          <p className="mt-6 text-sm text-gray-500">
+          {
+            //we dont need this for now
+            /* <p className="mt-6 text-sm text-gray-500">
             ¿No tienes una cuenta?{' '}
-            <Link href="#" className="text-[#FF6600] hover:underline">
+            <Link href="#" className="text-[#FF6600] hover:underline"> 
               Contacta al administrador
             </Link>
-          </p>
+          </p>*/
+          }
         </div>
       </div>
     </div>
