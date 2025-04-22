@@ -10,5 +10,11 @@
     "email": "Correo electrónico",
     "password": "Contraseña",
     "loginButton": "Iniciar sesión"
+  },
+  "Header": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "departments": "Departamentos",
+    "loginButton": "Iniciar sesión"
   }
 }

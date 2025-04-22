@@ -10,5 +10,11 @@
     "email": "Email",
     "password": "Password",
     "loginButton": "Login"
+  },
+  "Header": {
+    "home": "Home",
+    "blog": "Blog",
+    "departments": "Departments",
+    "loginButton": "Login"
   }
 }
