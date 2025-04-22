@@ -9,12 +9,19 @@ import { Text } from '../atoms/text';
 import Image from 'next/image';
 import Link from 'next/link';
 import { signIn } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState(''); //correo@deinsaglobal.com
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+
+  const login = useTranslations('Login');
+  const loginDescription = useTranslations('Login');
+  const loginButton = useTranslations('Login');
+  const emailHolder = useTranslations('Login');
+  const passwordHolder = useTranslations('Login');
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
@@ -48,9 +55,9 @@ export const LoginForm: React.FC = () => {
               />
             </div>
           </div>
-          <h2 className="text-3xl font-bold">Iniciar Sesión</h2>
+          <h2 className="text-3xl font-bold">{login('login')}</h2>
           <p className="mt-2 text-gray-500">
-            Ingresa tus credenciales para acceder al panel de administración
+            {loginDescription('loginDescription')}
           </p>
         </div>
 
@@ -62,7 +69,7 @@ export const LoginForm: React.FC = () => {
             className="space-y-6"
           >
             <FormField
-              label="Correo Electrónico"
+              label={emailHolder('email')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               id="email"
@@ -72,7 +79,7 @@ export const LoginForm: React.FC = () => {
               required
             />
             <FormField
-              label="Contraseña"
+              label={passwordHolder('password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="password"
@@ -95,7 +102,7 @@ export const LoginForm: React.FC = () => {
               type="submit"
               className="w-full rounded bg-[#FF6600] py-2 text-white hover:bg-[#FF6600]/90"
             >
-              Iniciar Sesión
+              {loginButton('loginButton')}
             </Button>
           </form>
         </div>
