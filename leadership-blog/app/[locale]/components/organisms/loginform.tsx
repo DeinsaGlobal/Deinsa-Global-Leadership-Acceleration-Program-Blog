@@ -17,11 +17,7 @@ export const LoginForm: React.FC = () => {
   const [error, setError] = useState('');
   const router = useRouter();
 
-  const login = useTranslations('Login');
-  const loginDescription = useTranslations('Login');
-  const loginButton = useTranslations('Login');
-  const emailHolder = useTranslations('Login');
-  const passwordHolder = useTranslations('Login');
+  const t = useTranslations('Login');
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
@@ -55,10 +51,8 @@ export const LoginForm: React.FC = () => {
               />
             </div>
           </div>
-          <h2 className="text-3xl font-bold">{login('login')}</h2>
-          <p className="mt-2 text-gray-500">
-            {loginDescription('loginDescription')}
-          </p>
+          <h2 className="text-3xl font-bold">{t('login')}</h2>
+          <p className="mt-2 text-gray-500">{t('loginDescription')}</p>
         </div>
 
         <div className="rounded bg-white p-6 shadow">
@@ -69,7 +63,7 @@ export const LoginForm: React.FC = () => {
             className="space-y-6"
           >
             <FormField
-              label={emailHolder('email')}
+              label={t('email')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               id="email"
@@ -79,7 +73,7 @@ export const LoginForm: React.FC = () => {
               required
             />
             <FormField
-              label={passwordHolder('password')}
+              label={t('password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="password"
@@ -102,7 +96,7 @@ export const LoginForm: React.FC = () => {
               type="submit"
               className="w-full rounded bg-[#FF6600] py-2 text-white hover:bg-[#FF6600]/90"
             >
-              {loginButton('loginButton')}
+              {t('loginButton')}
             </Button>
           </form>
         </div>
