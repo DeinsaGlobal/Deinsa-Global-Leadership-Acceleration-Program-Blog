@@ -49,8 +49,8 @@ export const authConfig: NextAuthOptions = {
       return session;
     },
     /*
-     Callbacks are used to redirect the user to the correct locale based on the URL
-     This is useful for internationalization (i18n) in Next.js applications
+    Callbacks are used to redirect the user to the correct locale based on the URL
+    This is useful for internationalization (i18n) in Next.js applications
     */
     async redirect({ baseUrl, url }) {
       const localeMatch = url.match(/\/([a-z]{2}(-[A-Z]{2})?)(\/|$)/);
