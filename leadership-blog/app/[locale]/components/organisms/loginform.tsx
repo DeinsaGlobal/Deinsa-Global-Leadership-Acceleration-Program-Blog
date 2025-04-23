@@ -7,7 +7,7 @@ import { Button } from '../atoms/button';
 // import { Title } from '../atoms/title';
 import { Text } from '../atoms/text';
 import Image from 'next/image';
-import Link from 'next/link';
+//import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
@@ -31,7 +31,7 @@ export const LoginForm: React.FC = () => {
     });
 
     if (response?.error) {
-      setError('Correo o contraseña incorrectos.');
+      setError(t('loginError'));
     } else {
       router.push('/dashboard');
     }
@@ -68,7 +68,7 @@ export const LoginForm: React.FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               type="email"
-              placeholder="correo@deinsa.com"
+              placeholder="email@deinsa.com"
               style={{ color: 'black', backgroundColor: 'white' }}
               required
             />
