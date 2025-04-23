@@ -9,7 +9,8 @@
     "loginDescription": "Veuillez entrer vos identifiants pour accéder à la plateforme.",
     "email": "Email",
     "password": "Mot de passe",
-    "loginButton": "Connexion"
+    "loginButton": "Connexion",
+    "loginError": "Email ou mot de passe invalide."
   },
   "Header": {
     "home": "Accueil",

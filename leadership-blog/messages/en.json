@@ -9,7 +9,8 @@
     "loginDescription": "Please enter your credentials to access the platform.",
     "email": "Email",
     "password": "Password",
-    "loginButton": "Login"
+    "loginButton": "Login",
+    "loginError": "Invalid email or password."
   },
   "Header": {
     "home": "Home",

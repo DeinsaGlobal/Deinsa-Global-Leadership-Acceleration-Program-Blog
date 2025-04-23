@@ -9,7 +9,8 @@
     "loginDescription": "Por favor ingrese sus credenciales para acceder a la plataforma.",
     "email": "Correo electrónico",
     "password": "Contraseña",
-    "loginButton": "Iniciar sesión"
+    "loginButton": "Iniciar sesión",
+    "loginError": "Correo electrónico o contraseña inválidos."
   },
   "Header": {
     "home": "Inicio",
