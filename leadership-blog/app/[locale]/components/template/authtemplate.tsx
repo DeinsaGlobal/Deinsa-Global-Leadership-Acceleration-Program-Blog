@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Header from '../organisms/header';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
@@ -44,6 +46,16 @@ interface AuthTemplateProps {
 */
 export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   const t = useTranslations('Login');
+  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
+  // This is important. It allows us to avoid hydration errors when using the theme.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
+  const logoSrc =
+    theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
   return (
     <div className="grid h-screen grid-cols-2 grid-rows-2 gap-0">
       <div className="col-span-2">
@@ -54,15 +66,17 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
           <div className="flex flex-col items-start justify-center">
             <div className="mb-6 inline-block rounded-lg bg-white/10 p-3 backdrop-blur-sm">
               <Image
-                src="/white-deinsa-logo.png"
+                src={logoSrc}
                 alt="Logo"
                 width={150}
                 height={150}
                 className="object-contain"
               />
             </div>
-            <h1 className="mb-4 text-4xl font-bold text-white">{t('title')}</h1>
-            <p className="text-lg text-white/80">{t('titleDescription')}</p>
+            <h1 className="mb-4 text-4xl font-bold">{t('title')}</h1>
+            <p className="text-lg text-gray-700 dark:text-white/80">
+              {t('titleDescription')}
+            </p>
           </div>
         </div>
         <div className="flex w-1/2 items-start justify-end pl-8">
