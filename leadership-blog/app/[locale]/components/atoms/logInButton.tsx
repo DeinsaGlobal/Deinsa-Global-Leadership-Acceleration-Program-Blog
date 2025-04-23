@@ -12,7 +12,7 @@ export default function LogInButton({ to, children }: Props) {
   return (
     <button
       onClick={() => router.push(to)}
-      className="rounded bg-blue-500 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-700"
+      className="rounded bg-orange-500 px-4 py-2 font-bold text-white transition duration-300 hover:bg-gray-700"
     >
       {children}
     </button>
