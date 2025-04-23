@@ -6,20 +6,25 @@ import { useTranslations } from 'next-intl';
 //import { DarkModeLogo } from '../atoms/logo'; check later
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
   const t = useTranslations('Header');
+  const { theme } = useTheme();
   // This is important. It allows us to avoid hydration errors when using the theme.
   useEffect(() => {
     setMounted(true);
   }, []);
   if (!mounted) return null;
+
+  const logoSrc =
+    theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
   return (
     //<header className="flex items-center justify-between bg-white px-8 py-4 shadow-md">
     <header className="flex items-center justify-between bg-white px-8 py-4 text-black shadow-md transition-colors duration-300 dark:bg-gray-900 dark:text-white">
       <Image
-        src="/orange-deinsa-logo.png"
+        src={logoSrc}
         alt="Deinsa Global logo"
         width={100}
         height={100}
