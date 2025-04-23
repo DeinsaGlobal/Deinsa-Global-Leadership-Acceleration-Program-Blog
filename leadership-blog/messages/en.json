@@ -15,6 +15,8 @@
     "home": "Home",
     "blog": "Blog",
     "departments": "Departments",
-    "loginButton": "Login"
+    "loginButton": "Login",
+    "lightMode": "☀️ Light",
+    "darkMode": "🌙 Dark"
   }
 }

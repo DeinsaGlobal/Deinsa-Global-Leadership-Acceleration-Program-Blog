@@ -15,6 +15,8 @@
     "home": "Inicio",
     "blog": "Blog",
     "departments": "Departamentos",
-    "loginButton": "Iniciar sesión"
+    "loginButton": "Iniciar sesión",
+    "lightMode": "☀️ Claro",
+    "darkMode": "🌙 Oscuro"
   }
 }
