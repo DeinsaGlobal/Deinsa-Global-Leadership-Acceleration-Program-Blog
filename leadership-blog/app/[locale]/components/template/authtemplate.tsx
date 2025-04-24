@@ -1,15 +1,62 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
 import Header from '../organisms/header';
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import LoginMessage from '../organisms/loginMessage';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
 }
+
+export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
+  const [mounted, setMounted] = useState(false);
+  // This is important. It allows us to avoid hydration errors when using the theme.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
+  return (
+    <>
+      <Header />
+      <div className="grid grid-cols-2 grid-rows-1 gap-0">
+        <LoginMessage />
+        {children}
+      </div>
+    </>
+  );
+};
+
+/*
+        -------THIS GRID IS FOR THE OLD DESIGN------------
+<div className="grid h-screen grid-cols-2 grid-rows-2 gap-0">
+      <div className="col-span-2">
+        <Header />
+      </div>
+      <div className="col-span-2 row-start-2 flex h-full items-center justify-center px-8">
+        <div className="flex w-1/2 items-start justify-start pr-8">
+          <div className="flex flex-col items-start justify-center">
+            <div className="mb-6 inline-block rounded-lg bg-white/10 p-3 backdrop-blur-sm">
+              <Image
+                src={logoSrc}
+                alt="Logo"
+                width={150}
+                height={150}
+                className="object-contain"
+              />
+            </div>
+            <h1 className="mb-4 text-4xl font-bold">{t('title')}</h1>
+            <p className="text-lg text-gray-700 dark:text-white/80">
+              {t('titleDescription')}
+            </p>
+          </div>
+        </div>
+        <div className="flex w-1/2 items-start justify-end pl-8">
+          <div className="w-full max-w-md space-y-8">{children}</div>
+        </div>
+      </div>
+    </div>*/
 
 /*export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   const t = useTranslations('Login');
@@ -44,45 +91,32 @@ interface AuthTemplateProps {
   );
 };
 */
-export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
-  const t = useTranslations('Login');
-  const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
-  // This is important. It allows us to avoid hydration errors when using the theme.
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) return null;
 
-  const logoSrc =
-    theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
-  return (
-    <div className="grid h-screen grid-cols-2 grid-rows-2 gap-0">
-      <div className="col-span-2">
-        <Header />
-      </div>
-      <div className="col-span-2 row-start-2 flex h-full items-center justify-center px-8">
-        <div className="flex w-1/2 items-start justify-start pr-8">
-          <div className="flex flex-col items-start justify-center">
-            <div className="mb-6 inline-block rounded-lg bg-white/10 p-3 backdrop-blur-sm">
-              <Image
-                src={logoSrc}
-                alt="Logo"
-                width={150}
-                height={150}
-                className="object-contain"
-              />
-            </div>
-            <h1 className="mb-4 text-4xl font-bold">{t('title')}</h1>
-            <p className="text-lg text-gray-700 dark:text-white/80">
-              {t('titleDescription')}
-            </p>
-          </div>
+{
+  /*<div
+        className={`grid h-screen grid-cols-2 grid-rows-2 gap-0 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
+      >
+        <div
+          className={`row-start-2 flex h-full flex-col items-start justify-center px-8 ${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
+        >
+          <Image
+            src={logoSrc}
+            alt="Logo"
+            width={150}
+            height={150}
+            className="object-contain"
+          />
+          <h1 className="mb-4 text-4xl font-bold">{t('title')}</h1>
+          <p className="text-lg text-gray-700 dark:text-white/80">
+            {t('titleDescription')}
+          </p>
         </div>
-        <div className="flex w-1/2 items-start justify-end pl-8">
+        <div
+          className={`row-start-2 flex h-full items-center justify-start px-8 ${theme === 'dark' ? 'bg-red-800' : 'bg-green-100'}`}
+        >
           <div className="w-full max-w-md space-y-8">{children}</div>
         </div>
       </div>
-    </div>
-  );
-};
+    </>
+  );*/
+}
