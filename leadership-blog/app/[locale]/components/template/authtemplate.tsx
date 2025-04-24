@@ -18,13 +18,15 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   if (!mounted) return null;
 
   return (
-    <>
+    <div className="h-screen">
       <Header />
-      <div className="grid grid-cols-2 grid-rows-1 gap-0">
-        <LoginMessage />
-        {children}
+      <div className="grid h-full grid-cols-2">
+        <div className="flex items-center justify-center px-8">
+          <LoginMessage />
+        </div>
+        <div className="flex items-center justify-center px-8">{children}</div>
       </div>
-    </>
+    </div>
   );
 };
 
