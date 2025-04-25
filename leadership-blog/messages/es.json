@@ -19,5 +19,16 @@
     "loginButton": "Iniciar sesión",
     "lightMode": "☀️ Claro",
     "darkMode": "🌙 Oscuro"
+  },
+  "Footer": {
+    "contact": "Contacto",
+    "street": "Calle",
+    "departments": "Departamentos",
+    "sales": "Ventas",
+    "ssa": "Soluciones de sostenibilidad y medio ambiente",
+    "rd": "Investigación y desarrollo",
+    "newsletter": "Boletín informativo",
+    "newsletterDescription": "Suscríbase a nuestro boletín para recibir las últimas noticias y actualizaciones de Deinsa Global.",
+    "subscribeButton": "Suscribirse"
   }
 }

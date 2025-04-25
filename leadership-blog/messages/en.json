@@ -19,5 +19,16 @@
     "loginButton": "Login",
     "lightMode": "☀️ Light",
     "darkMode": "🌙 Dark"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "street": "Street",
+    "departments": "Departments",
+    "sales": "Sales",
+    "ssa": "Sustainability and environmental solutions",
+    "rd": "Research and development",
+    "newsletter": "Newsletter",
+    "newsletterDescription": "Subscribe to our newsletter to receive the latest news and updates from Deinsa Global.",
+    "subscribeButton": "Subscribe"
   }
 }

@@ -19,5 +19,16 @@
     "loginButton": "Connexion",
     "lightMode": "☀️ Clair",
     "darkMode": "🌙 Sombre"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "street": "Rue",
+    "departments": "Départements",
+    "sales": "Ventes",
+    "ssa": "Solutions de durabilité et environnementales",
+    "rd": "Recherche et développement",
+    "newsletter": "Bulletin d'information",
+    "newsletterDescription": "Abonnez-vous à notre bulletin d'information pour recevoir les dernières nouvelles et mises à jour de Deinsa Global.",
+    "subscribeButton": "S'abonner"
   }
 }
