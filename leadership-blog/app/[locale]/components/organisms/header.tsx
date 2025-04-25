@@ -21,19 +21,26 @@ export default function Header() {
   const logoSrc =
     theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
   return (
-    //<header className="flex items-center justify-between bg-white px-8 py-4 shadow-md">
     <header className="flex items-center justify-between bg-white px-8 py-4 text-black shadow-md transition-colors duration-300 dark:bg-[#3E3E3E] dark:text-white">
-      <Image
-        src={logoSrc}
-        alt="Deinsa Global logo"
-        width={100}
-        height={100}
-        className="rounded"
-        priority
-      />
-      <NavLinks />
-      <ChangeThemeButton />
-      <LogInButton to="/login">{t('loginButton')}</LogInButton>
+      <div className="flex items-center">
+        <Image
+          src={logoSrc}
+          alt="Deinsa Global logo"
+          width={100}
+          height={100}
+          className="rounded"
+          priority
+        />
+        <div className="ml-10">
+          <NavLinks />
+        </div>
+      </div>
+      <div className="flex items-center">
+        <ChangeThemeButton />
+        <div className="ml-4">
+          <LogInButton to="/login">{t('loginButton')}</LogInButton>
+        </div>
+      </div>
     </header>
   );
 }

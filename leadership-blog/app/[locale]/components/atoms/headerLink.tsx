@@ -9,7 +9,7 @@ export default function HeaderLink({ href, children }: HeaderLinkProps) {
   return (
     <Link
       href={href}
-      className="text-gray-700 transition-colors duration-200 hover:text-blue-600"
+      className="text-black-700 transition-colors duration-200 hover:text-orange-600 dark:text-white dark:hover:text-orange-400"
     >
       {children}
     </Link>
