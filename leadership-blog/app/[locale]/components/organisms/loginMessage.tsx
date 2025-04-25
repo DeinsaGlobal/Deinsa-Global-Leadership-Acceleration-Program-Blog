@@ -16,7 +16,7 @@ export default function LoginMessage() {
   const logoSrc =
     theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
   return (
-    <div className={`${theme === 'dark' ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`${theme === 'dark' ? 'bg-[#484848]' : 'bg-[#BABABA]'}`}>
       <Image
         src={logoSrc}
         alt="Logo"
