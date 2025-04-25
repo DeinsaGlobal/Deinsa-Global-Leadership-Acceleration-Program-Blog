@@ -22,7 +22,7 @@ export default function Header() {
     theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
   return (
     //<header className="flex items-center justify-between bg-white px-8 py-4 shadow-md">
-    <header className="flex items-center justify-between bg-white px-8 py-4 text-black shadow-md transition-colors duration-300 dark:bg-gray-900 dark:text-white">
+    <header className="flex items-center justify-between bg-white px-8 py-4 text-black shadow-md transition-colors duration-300 dark:bg-[#3E3E3E] dark:text-white">
       <Image
         src={logoSrc}
         alt="Deinsa Global logo"
