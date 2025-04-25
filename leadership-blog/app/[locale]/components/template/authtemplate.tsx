@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../organisms/header';
 import { useEffect, useState } from 'react';
 import LoginMessage from '../organisms/loginMessage';
+import { useTheme } from 'next-themes';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ interface AuthTemplateProps {
 
 export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
   // This is important. It allows us to avoid hydration errors when using the theme.
   useEffect(() => {
     setMounted(true);
@@ -20,15 +22,26 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
   return (
     <div className="h-screen">
       <Header />
+
       <div className="grid h-full grid-cols-2">
-        <div className="flex items-center justify-center px-8">
+        <div
+          className={`flex items-center justify-center bg-[#BABABA] px-8 dark:bg-[#484848]`}
+        >
           <LoginMessage />
         </div>
-        <div className="flex items-center justify-center px-8">{children}</div>
+        <div
+          className={`flex items-center justify-center bg-[#FFFFFF] px-8 dark:bg-[#484848]`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
 };
+
+{
+  /**/
+}
 
 /*
         -------THIS GRID IS FOR THE OLD DESIGN------------
