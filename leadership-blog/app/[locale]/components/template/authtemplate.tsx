@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../organisms/header';
 import { useEffect, useState } from 'react';
 import LoginMessage from '../organisms/loginMessage';
+import Footer from '../organisms/footer';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
@@ -33,6 +34,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
           {children}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

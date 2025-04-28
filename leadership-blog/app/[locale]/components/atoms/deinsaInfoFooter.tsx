@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
 
 export default function DeinsaInfoFooter() {
   const { theme } = useTheme();
+  const t = useTranslations('Footer');
   const logoSrc =
     theme === 'dark' ? '/white-deinsa-logo.png' : '/orange-deinsa-logo.png';
   return (
@@ -15,7 +17,7 @@ export default function DeinsaInfoFooter() {
         className="rounded"
         priority
       />
-      <p>Lorem ipsum dolor</p>
+      <p className="text-center">{t('deinsaDescription')}</p>
     </div>
   );
 }
