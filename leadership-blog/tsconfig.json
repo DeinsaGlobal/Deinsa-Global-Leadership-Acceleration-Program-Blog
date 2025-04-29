@@ -30,7 +30,8 @@
       "@/services/*": ["app/[locale]/services/*"],
       "@/assets/*": ["app/[locale]/assets/*"],
       "@/lib/*": ["app/[locale]/lib/*"],
-      "@/i18n/*": ["./i18n/*"]
+      "@/i18n/*": ["./i18n/*"],
+      "@/_trpc/*": ["app/_trpc/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
