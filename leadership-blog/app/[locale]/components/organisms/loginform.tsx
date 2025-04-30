@@ -4,15 +4,13 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { FormField } from '../molecules/formfield';
 import { Button } from '../atoms/button';
-// import { Title } from '../atoms/title';
 import { Text } from '../atoms/text';
 import Image from 'next/image';
-//import Link from 'next/link';
 import { signIn } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 
 export const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState(''); //correo@deinsaglobal.com
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
@@ -22,12 +20,10 @@ export const LoginForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
 
-    // Aquí se simula el inicio de sesión
     const response = await signIn('credentials', {
-      redirect: false, //new
+      redirect: false,
       email,
       password,
-      // callbackUrl: '/dashboard', //new
     });
 
     if (response?.error) {
@@ -80,14 +76,6 @@ export const LoginForm: React.FC = () => {
               type="password"
               style={{ color: 'black', backgroundColor: 'white' }}
               required
-              // extraContent={
-              //   <Link
-              //     href="/forgot-password"
-              //     className="text-sm text-[#FF6600] hover:underline"
-              //   >
-              //     ¿Olvidaste tu contraseña?
-              //   </Link>
-              // }
             />
 
             {error && <Text className="text-sm text-red-500">{error}</Text>}
@@ -107,41 +95,6 @@ export const LoginForm: React.FC = () => {
               <span className="w-full border-t" />
             </div>
           </div>
-
-          {/*
-             for now we are not using this, but we can use it later if we want to add social login          
-          <div className="flex justify-center gap-4">
-            <button className="flex w-full items-center justify-center rounded border border-gray-300 py-2">
-              <Image
-                src="/placeholder.svg?height=24&width=24"
-                alt="Google"
-                width={20}
-                height={20}
-                className="mr-2"
-              />
-              Google
-            </button>
-            <button className="flex w-full items-center justify-center rounded border border-gray-300 py-2">
-              <Image
-                src="/placeholder.svg?height=24&width=24"
-                alt="Microsoft"
-                width={20}
-                height={20}
-                className="mr-2"
-              />
-              Microsoft
-            </button>
-          </div>*/}
-
-          {
-            //we dont need this for now
-            /* <p className="mt-6 text-sm text-gray-500">
-            ¿No tienes una cuenta?{' '}
-            <Link href="#" className="text-[#FF6600] hover:underline"> 
-              Contacta al administrador
-            </Link>
-          </p>*/
-          }
         </div>
       </div>
     </div>
