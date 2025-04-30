@@ -1,51 +1,40 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import Header from '../organisms/header';
+import { useEffect, useState } from 'react';
+import LoginMessage from '../organisms/loginMessage';
+import Footer from '../organisms/footer';
 
 interface AuthTemplateProps {
   children: React.ReactNode;
 }
 
 export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
+  const [mounted, setMounted] = useState(false);
+  // This is important. It allows us to avoid hydration errors when using the theme.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
+
   return (
-    <div className="grid min-h-screen w-full lg:grid-cols-2">
-      {/* Image Section */}
-      <div className="relative hidden lg:block">
-        <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/60 to-black/30" />
-        <Image
-          src="/placeholder.svg?height=1080&width=1080"
-          alt="Deinsa Global"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 z-20 flex flex-col items-start justify-center p-12">
-          <div className="max-w-md">
-            <div className="mb-6 inline-block rounded-lg bg-white/10 p-3 backdrop-blur-sm">
-              <Image
-                src="/placeholder.svg?height=100&width=100"
-                alt="Logo"
-                width={40}
-                height={40}
-                className="object-contain"
-              />
-            </div>
-            <h1 className="mb-4 text-4xl font-bold text-white">
-              Bienvenido a la plataforma de Deinsa Global
-            </h1>
-            <p className="text-lg text-white/80">
-              Un espacio donde cada departamento comparte sus proyectos,
-              herramientas y avances.
-            </p>
-          </div>
+    <div className="h-screen">
+      <Header />
+
+      <div className="grid h-full grid-cols-2">
+        <div
+          className={`flex items-center justify-center bg-[#BABABA] px-8 dark:bg-[#484848]`}
+        >
+          <LoginMessage />
+        </div>
+        <div
+          className={`flex items-center justify-center bg-[#FFFFFF] px-8 dark:bg-[#484848]`}
+        >
+          {children}
         </div>
       </div>
-
-      {/* Form Section */}
-      <div className="flex items-center justify-center p-8">
-        <div className="w-full max-w-md space-y-8">{children}</div>
-      </div>
+      <Footer />
     </div>
   );
 };

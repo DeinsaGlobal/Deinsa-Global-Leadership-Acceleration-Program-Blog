@@ -1,5 +1,35 @@
 {
   "Home": {
     "title": "Bienvenue sur le blog du programme d'accélération du leadership!"
+  },
+  "Login": {
+    "title": "Bienvenue sur la plateforme mondiale de Deinsa",
+    "titleDescription": "Un espace où chaque département partage ses projets, outils et avancées.",
+    "login": "Connexion",
+    "loginDescription": "Veuillez entrer vos identifiants pour accéder à la plateforme.",
+    "email": "Email",
+    "password": "Mot de passe",
+    "loginButton": "Connexion",
+    "loginError": "Email ou mot de passe invalide."
+  },
+  "Header": {
+    "home": "Accueil",
+    "blog": "Blog",
+    "departments": "Départements",
+    "loginButton": "Connexion",
+    "lightMode": "☀️ Clair",
+    "darkMode": "🌙 Sombre"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "street": "Rue",
+    "departments": "Départements",
+    "sales": "Ventes",
+    "ssa": "Solutions de durabilité et environnementales",
+    "rd": "Recherche et développement",
+    "newsletter": "Bulletin d'information",
+    "newsletterDescription": "Abonnez-vous à notre bulletin d'information pour recevoir les dernières nouvelles et mises à jour de Deinsa Global.",
+    "subscribeButton": "S'abonner",
+    "deinsaDescription": "Blog interactif et référentiel d'activités pour les stagiaires et les départements"
   }
 }

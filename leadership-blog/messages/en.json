@@ -1,5 +1,35 @@
 {
   "Home": {
     "title": "Welcome to the Leadership Acceleration Program Blog!"
+  },
+  "Login": {
+    "title": "Welcome to the Deinsa Global plataform",
+    "titleDescription": "A space where each department shares its projects, tools and progress.",
+    "login": "Login",
+    "loginDescription": "Please enter your credentials to access the platform.",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Login",
+    "loginError": "Invalid email or password."
+  },
+  "Header": {
+    "home": "Home",
+    "blog": "Blog",
+    "departments": "Departments",
+    "loginButton": "Login",
+    "lightMode": "☀️ Light",
+    "darkMode": "🌙 Dark"
+  },
+  "Footer": {
+    "contact": "Contact",
+    "street": "Street",
+    "departments": "Departments",
+    "sales": "Sales",
+    "ssa": "Sustainability and environmental solutions",
+    "rd": "Research and development",
+    "newsletter": "Newsletter",
+    "newsletterDescription": "Subscribe to our newsletter to receive the latest news and updates from Deinsa Global.",
+    "subscribeButton": "Subscribe",
+    "deinsaDescription": "Interactive blog and activity repository for interns and departments"
   }
 }

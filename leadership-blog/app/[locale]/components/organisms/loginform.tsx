@@ -7,14 +7,17 @@ import { Button } from '../atoms/button';
 // import { Title } from '../atoms/title';
 import { Text } from '../atoms/text';
 import Image from 'next/image';
-import Link from 'next/link';
+//import Link from 'next/link';
 import { signIn } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 
 export const LoginForm: React.FC = () => {
   const [email, setEmail] = useState(''); //correo@deinsaglobal.com
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+
+  const t = useTranslations('Login');
 
   const handleSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
@@ -28,7 +31,7 @@ export const LoginForm: React.FC = () => {
     });
 
     if (response?.error) {
-      setError('Correo o contraseña incorrectos.');
+      setError(t('loginError'));
     } else {
       router.push('/dashboard');
     }
@@ -48,10 +51,8 @@ export const LoginForm: React.FC = () => {
               />
             </div>
           </div>
-          <h2 className="text-3xl font-bold">Iniciar Sesión</h2>
-          <p className="mt-2 text-gray-500">
-            Ingresa tus credenciales para acceder al panel de administración
-          </p>
+          <h2 className="text-3xl font-bold">{t('login')}</h2>
+          <p className="mt-2 text-gray-500">{t('loginDescription')}</p>
         </div>
 
         <div className="rounded bg-white p-6 shadow">
@@ -62,17 +63,17 @@ export const LoginForm: React.FC = () => {
             className="space-y-6"
           >
             <FormField
-              label="Correo Electrónico"
+              label={t('email')}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               type="email"
-              placeholder="correo@deinsa.com"
+              placeholder="email@deinsa.com"
               style={{ color: 'black', backgroundColor: 'white' }}
               required
             />
             <FormField
-              label="Contraseña"
+              label={t('password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               id="password"
@@ -95,7 +96,7 @@ export const LoginForm: React.FC = () => {
               type="submit"
               className="w-full rounded bg-[#FF6600] py-2 text-white hover:bg-[#FF6600]/90"
             >
-              Iniciar Sesión
+              {t('loginButton')}
             </Button>
           </form>
         </div>
@@ -105,13 +106,10 @@ export const LoginForm: React.FC = () => {
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
             </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-gray-500">
-                O continúa con
-              </span>
-            </div>
           </div>
 
+          {/*
+             for now we are not using this, but we can use it later if we want to add social login          
           <div className="flex justify-center gap-4">
             <button className="flex w-full items-center justify-center rounded border border-gray-300 py-2">
               <Image
@@ -133,14 +131,17 @@ export const LoginForm: React.FC = () => {
               />
               Microsoft
             </button>
-          </div>
+          </div>*/}
 
-          <p className="mt-6 text-sm text-gray-500">
+          {
+            //we dont need this for now
+            /* <p className="mt-6 text-sm text-gray-500">
             ¿No tienes una cuenta?{' '}
-            <Link href="#" className="text-[#FF6600] hover:underline">
+            <Link href="#" className="text-[#FF6600] hover:underline"> 
               Contacta al administrador
             </Link>
-          </p>
+          </p>*/
+          }
         </div>
       </div>
     </div>

@@ -17,8 +17,11 @@
   },
   "dependencies": {
     "@prisma/client": "^6.6.0",
-    "@radix-ui/react-label": "^2.1.2",
-    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-label": "^2.1.4",
+    "@radix-ui/react-select": "^2.2.2",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@radix-ui/react-tabs": "^1.1.9",
+    "@theme-toggles/react": "^4.1.0",
     "babel-plugin-react-compiler": "^19.0.0-beta-aeaed83-20250323",
     "class-variance-authority": "^0.7.1",
     "cloudinary": "^2.6.0",
