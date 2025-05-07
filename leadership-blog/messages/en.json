@@ -31,5 +31,10 @@
     "newsletterDescription": "Subscribe to our newsletter to receive the latest news and updates from Deinsa Global.",
     "subscribeButton": "Subscribe",
     "deinsaDescription": "Interactive blog and activity repository for interns and departments"
+  },
+  "Banner": {
+    "title": "Deinsa Global interactive blog",
+    "description": "A space where each department shares its projects, tools and progress.",
+    "button": "Browse articles"
   }
 }

@@ -31,5 +31,10 @@
     "newsletterDescription": "Abonnez-vous à notre bulletin d'information pour recevoir les dernières nouvelles et mises à jour de Deinsa Global.",
     "subscribeButton": "S'abonner",
     "deinsaDescription": "Blog interactif et référentiel d'activités pour les stagiaires et les départements"
+  },
+  "Banner": {
+    "title": "Blog interactif de Deinsa Global",
+    "description": "Un espace où chaque département partage ses projets, outils et avancées.",
+    "button": "Parcourir les articles"
   }
 }
