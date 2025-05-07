@@ -1,4 +1,4 @@
-import { appRouter } from '@/server/index';
+import { appRouter } from 'server';
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();

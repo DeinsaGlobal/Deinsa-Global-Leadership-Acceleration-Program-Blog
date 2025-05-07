@@ -21,7 +21,7 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./[locale]/*"],
+      "@/*": ["./*"],
       "@/components/*": ["./app/[locale]/components/*"],
       "@/consts/*": ["app/[locale]/lib/consts/*"],
       "@/utils/*": ["app/[locale]/lib/utils/*"],

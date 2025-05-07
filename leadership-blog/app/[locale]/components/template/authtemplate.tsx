@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Header from '../organisms/header';
 import { useEffect, useState } from 'react';
 import LoginMessage from '../organisms/loginMessage';
 import Footer from '../organisms/footer';
@@ -20,8 +19,6 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = ({ children }) => {
 
   return (
     <div className="h-screen">
-      <Header />
-
       <div className="grid h-full grid-cols-2">
         <div
           className={`flex items-center justify-center bg-[#BABABA] px-8 dark:bg-[#484848]`}
