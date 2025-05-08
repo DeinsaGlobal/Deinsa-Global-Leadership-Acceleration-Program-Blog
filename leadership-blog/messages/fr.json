@@ -36,5 +36,20 @@
     "title": "Blog interactif de Deinsa Global",
     "description": "Un espace où chaque département partage ses projets, outils et avancées.",
     "button": "Parcourir les articles"
+  },
+  "mainpage": {
+    "titleDepartments": "Nos départements",
+    "ssa": "Solutions de durabilité et environnementales",
+    "ssaDescription": "Le département de durabilité et de solutions environnementales se concentre sur le développement de solutions innovantes pour promouvoir la durabilité et réduire l'impact environnemental.",
+    "rd": "Recherche et développement",
+    "rdDescription": "Le département de recherche et développement est dédié à l'avancement de la technologie et de l'innovation pour stimuler la croissance et améliorer l'efficacité.",
+    "sales": "Ventes",
+    "salesDescription": "Le département des ventes est responsable de la croissance des revenus et de l'établissement de relations solides avec les clients.",
+    "laPlazaDescription": "La Plaza est un espace où chaque département partage ses projets, outils et avancées.",
+    "rrcc": "Relations d'entreprise",
+    "rrccDescription": "Le département des relations d'entreprise est responsable de la gestion des relations avec les parties prenantes et d'assurer une communication efficace.",
+    "hc": "Capital humain",
+    "hcDescription": "Le département du capital humain se concentre sur la gestion des talents, le développement des employés et la culture organisationnelle.",
+    "seeProyects": "Voir les projets"
   }
 }

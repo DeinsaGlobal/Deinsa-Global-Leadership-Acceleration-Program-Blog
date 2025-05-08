@@ -36,5 +36,20 @@
     "title": "Deinsa Global interactive blog",
     "description": "A space where each department shares its projects, tools and progress.",
     "button": "Browse articles"
+  },
+  "mainpage": {
+    "titleDepartments": "Our Departments",
+    "ssa": "Sustainability and environmental solutions",
+    "ssaDescription": "The Sustainability and Environmental Solutions department focuses on developing innovative solutions to promote sustainability and reduce environmental impact.",
+    "rd": "Research and development",
+    "rdDescription": "The Research and Development department is dedicated to advancing technology and innovation to drive growth and improve efficiency.",
+    "sales": "Sales",
+    "salesDescription": "The Sales department is responsible for driving revenue growth and building strong relationships with customers.",
+    "laPlazaDescription": "La Plaza is a space where each department shares its projects, tools and progress.",
+    "rrcc": "Corporate Relations",
+    "rrccDescription": "The Corporate Relations department is responsible for managing relationships with stakeholders and ensuring effective communication.",
+    "hc": "Human Capital",
+    "hcDescription": "The Human Capital department focuses on talent management, employee development and organizational culture.",
+    "seeProyects": "See projects"
   }
 }

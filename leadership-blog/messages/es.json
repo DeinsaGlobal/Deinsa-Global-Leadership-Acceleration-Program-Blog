@@ -36,5 +36,20 @@
     "title": "Blog interactivo de Deinsa Global",
     "description": "Un espacio donde cada departamento comparte sus proyectos, herramientas y avances.",
     "button": "Explorar artículos"
+  },
+  "mainpage": {
+    "titleDepartments": "Nuestros Departamentos",
+    "ssa": "Soluciones de sostenibilidad y medio ambiente",
+    "ssaDescription": "El departamento de Sostenibilidad y Soluciones Ambientales se centra en desarrollar soluciones innovadoras para promover la sostenibilidad y reducir el impacto ambiental.",
+    "rd": "Investigación y desarrollo",
+    "rdDescription": "El departamento de Investigación y Desarrollo se dedica a avanzar en tecnología e innovación para impulsar el crecimiento y mejorar la eficiencia.",
+    "sales": "Ventas",
+    "salesDescription": "El departamento de Ventas es responsable de impulsar el crecimiento de ingresos y construir relaciones sólidas con los clientes.",
+    "laPlazaDescription": "La Plaza es un espacio donde cada departamento comparte sus proyectos, herramientas y avances.",
+    "rrcc": "Relaciones Corporativas",
+    "rrccDescription": "El departamento de Relaciones Corporativas es responsable de gestionar las relaciones con las partes interesadas y garantizar una comunicación efectiva.",
+    "hc": "Capital Humano",
+    "hcDescription": "El departamento de Capital Humano se centra en la gestión del talento, el desarrollo de empleados y la cultura organizacional.",
+    "seeProyects": "Ver proyectos"
   }
 }
