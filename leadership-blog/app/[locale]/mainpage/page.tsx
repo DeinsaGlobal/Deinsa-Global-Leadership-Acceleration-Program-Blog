@@ -3,6 +3,8 @@
 import Header from '@/components/organisms/header';
 import Banner from '@/components/molecules/mainPage/banner';
 import DepartmentsSection from '@/components/organisms/mainPage/departmentsSection';
+import PostulationBanner from '@/components/molecules/mainPage/postulationBanner';
+import Footer from '@/components/organisms/footer';
 import { useTranslations } from 'next-intl';
 
 interface DepartmentData {
@@ -66,6 +68,8 @@ export default function MainPage() {
       <Header />
       <Banner />
       <DepartmentsSection departments={departments} />
+      <PostulationBanner />
+      <Footer />
     </div>
   );
 }

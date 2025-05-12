@@ -50,6 +50,9 @@
     "rrccDescription": "Le département des relations d'entreprise est responsable de la gestion des relations avec les parties prenantes et d'assurer une communication efficace.",
     "hc": "Capital humain",
     "hcDescription": "Le département du capital humain se concentre sur la gestion des talents, le développement des employés et la culture organisationnelle.",
-    "seeProyects": "Voir les projets"
+    "seeProyects": "Voir les projets",
+    "postulationBannerDescription": "Si vous êtes intéressé à rejoindre notre équipe, veuillez remplir le formulaire ci-dessous et nous vous contacterons dès que possible.",
+    "postulationBannerButton": "Postuler maintenant",
+    "postulationBannerTitle": "Rejoignez notre équipe!"
   }
 }

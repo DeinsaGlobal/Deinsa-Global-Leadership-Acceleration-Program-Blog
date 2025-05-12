@@ -50,6 +50,9 @@
     "rrccDescription": "El departamento de Relaciones Corporativas es responsable de gestionar las relaciones con las partes interesadas y garantizar una comunicación efectiva.",
     "hc": "Capital Humano",
     "hcDescription": "El departamento de Capital Humano se centra en la gestión del talento, el desarrollo de empleados y la cultura organizacional.",
-    "seeProyects": "Ver proyectos"
+    "seeProyects": "Ver proyectos",
+    "postulationBannerDescription": "Si estás interesado en unirte a nuestro equipo, por favor completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.",
+    "postulationBannerButton": "Postular ahora",
+    "postulationBannerTitle": "¡Únete a nuestro equipo!"
   }
 }
