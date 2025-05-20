@@ -7,7 +7,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import './globals.css';
-// import SessionAuthProvider from './context/SessionAuthProvider';
+import SessionAuthProvider from './context/SessionAuthProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -42,11 +42,13 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <NextIntlClientProvider>
-            <TRPCProvider>{children}</TRPCProvider>
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <SessionAuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <NextIntlClientProvider>
+              <TRPCProvider>{children}</TRPCProvider>
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </SessionAuthProvider>
       </body>
     </html>
   );
