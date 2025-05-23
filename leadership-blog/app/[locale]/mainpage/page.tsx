@@ -5,6 +5,7 @@ import Banner from '@/components/molecules/mainPage/banner';
 import DepartmentsSection from '@/components/organisms/mainPage/departmentsSection';
 import PostulationBanner from '@/components/molecules/mainPage/postulationBanner';
 import Footer from '@/components/organisms/footer';
+import FeaturedProjectsSection from '@/components/template/featuredProjectsSection';
 import { useTranslations } from 'next-intl';
 
 interface DepartmentData {
@@ -17,6 +18,30 @@ interface DepartmentData {
 
 export default function MainPage() {
   const t = useTranslations('mainpage');
+
+  const projectData = [
+    {
+      title: 'Desarrollo de algoritmos predictivos',
+      description:
+        'Creación de modelos de análisis para anticipar tendencias y comportamientos del mercado.',
+      department: 'Departamento de R&D',
+      date: '23 Mar 2025',
+    },
+    {
+      title: 'Desarrollo de algoritmos predictivos',
+      description:
+        'Creación de modelos de análisis para anticipar tendencias y comportamientos del mercado.',
+      department: 'Departamento de R&D',
+      date: '23 Mar 2025',
+    },
+    {
+      title: 'Desarrollo de algoritmos predictivos',
+      description:
+        'Creación de modelos de análisis para anticipar tendencias y comportamientos del mercado.',
+      department: 'Departamento de R&D',
+      date: '23 Mar 2025',
+    },
+  ];
 
   const departments: DepartmentData[] = [
     {
@@ -67,6 +92,7 @@ export default function MainPage() {
     <div>
       <Header />
       <Banner />
+      <FeaturedProjectsSection projects={projectData} />
       <DepartmentsSection departments={departments} />
       <PostulationBanner />
       <Footer />
