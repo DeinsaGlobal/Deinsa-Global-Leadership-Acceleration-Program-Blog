@@ -53,6 +53,11 @@
     "seeProyects": "See projects",
     "postulationBannerDescription": "If you are interested in joining our team, please fill out the form below and we will get back to you as soon as possible.",
     "postulationBannerButton": "Postulate now",
-    "postulationBannerTitle": "Join our team!"
+    "postulationBannerTitle": "Join our team!",
+    "featuredProjectsTitle": "Featured Projects",
+    "featuredProjectsLoading": "Loading featured projects...",
+    "featuredProjectsError": "Error loading featured projects.",
+    "featuredProjectsEmpty": "No featured projects available at this time.",
+    "featuredProjectsSeeAll": "See more"
   }
 }

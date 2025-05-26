@@ -53,6 +53,11 @@
     "seeProyects": "Voir les projets",
     "postulationBannerDescription": "Si vous êtes intéressé à rejoindre notre équipe, veuillez remplir le formulaire ci-dessous et nous vous contacterons dès que possible.",
     "postulationBannerButton": "Postuler maintenant",
-    "postulationBannerTitle": "Rejoignez notre équipe!"
+    "postulationBannerTitle": "Rejoignez notre équipe!",
+    "featuredProjectsTitle": "Projets en vedette",
+    "featuredProjectsLoading": "Chargement des projets en vedette...",
+    "featuredProjectsError": "Erreur lors du chargement des projets en vedette.",
+    "featuredProjectsEmpty": "Aucun projet en vedette disponible pour le moment.",
+    "featuredProjectsSeeAll": "Voir plus"
   }
 }
