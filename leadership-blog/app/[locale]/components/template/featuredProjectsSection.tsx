@@ -1,27 +1,50 @@
 import React from 'react';
 import ProjectCard from '../organisms/mainPage/projectCard';
+import { useGetFeaturedPosts } from '@/hooks/post/useGetFeaturePosts';
+import { useTranslations } from 'next-intl';
 
-interface FeaturedProjectsSectionProps {
-  projects: Array<{
-    imageUrl?: string;
-    title: string;
-    description: string;
-    department: string;
-    date: string;
-  }>;
-}
+const FeaturedProjectsSection: React.FC = () => {
+  const t = useTranslations('mainpage');
+  const {
+    featuredPosts: projects,
+    isLoading,
+    isError,
+    error,
+  } = useGetFeaturedPosts();
 
-const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
-  projects,
-}) => {
+  if (isLoading) {
+    return (
+      <section className="container mx-auto px-4 py-8 text-center">
+        <p>{t('featuredProjectsLoading')}</p>
+      </section>
+    );
+  }
+
+  if (isError) {
+    return (
+      <section className="container mx-auto px-4 py-8 text-center text-red-600">
+        <p>
+          {t('featuredProjectsError')} {error?.message}
+        </p>
+      </section>
+    );
+  }
+
+  if (!projects || projects.length === 0) {
+    return (
+      <section className="container mx-auto px-4 py-8 text-center">
+        <p>{t('featuredProjectsEmpty')}</p>
+      </section>
+    );
+  }
   return (
     <section className="container mx-auto px-4 py-8">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-          Proyectos Destacados
+          {t('featuredProjectsTitle')}
         </h2>
         <a href="#" className="flex items-center text-blue-600 hover:underline">
-          Ver todos
+          {t('featuredProjectsSeeAll')}
           <svg
             className="ml-1 h-4 w-4"
             fill="none"
@@ -41,11 +64,13 @@ const FeaturedProjectsSection: React.FC<FeaturedProjectsSectionProps> = ({
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <ProjectCard
-            departmentName={project.department}
-            creationDate={project.date}
+            id={project.id}
+            title={project.title}
+            description={project.content ?? ''}
+            departmentName={project.departmentName ?? ''}
+            creationDate={project.createdAt}
             imageSrc={''}
-            key={index}
-            {...project}
+            key={project.id + index}
           />
         ))}
       </div>

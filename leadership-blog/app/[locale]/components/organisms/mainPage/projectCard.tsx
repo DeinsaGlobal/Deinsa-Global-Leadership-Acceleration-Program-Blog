@@ -6,22 +6,38 @@ import HeadingTitleCard from '@/components/atoms/mainPage/headingTitleCard';
 import Image from 'next/image';
 
 interface ProjectCardProps {
+  id: number;
   title: string;
   description: string;
   departmentName: string;
-  creationDate: string;
+  creationDate: Date;
   imageSrc: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
+  id,
   title,
   description,
   departmentName,
   creationDate,
   imageSrc,
 }) => {
+  // Formatear la fecha para mostrarla
+  const formattedDate = creationDate
+    ? new Intl.DateTimeFormat('es-ES', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      })
+        .format(creationDate)
+        .replace(/\./g, '') // Eliminar puntos de la abreviatura del mes
+        .replace('mar', 'Mar') // Ejemplo para mantener consistencia con "Mar"
+    : '';
   return (
-    <div className="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md dark:bg-[#3E3E3E]">
+    <div
+      key={id}
+      className="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md dark:bg-[#3E3E3E]"
+    >
       {imageSrc ? (
         <Image src={imageSrc} alt={title} />
       ) : (
@@ -32,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <Paragraph text={description} />
         <ProjectMeta
           departmentName={departmentName}
-          creationDate={creationDate}
+          creationDate={formattedDate}
         />
       </div>
     </div>

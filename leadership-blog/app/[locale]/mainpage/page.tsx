@@ -19,30 +19,6 @@ interface DepartmentData {
 export default function MainPage() {
   const t = useTranslations('mainpage');
 
-  const projectData = [
-    {
-      title: 'Desarrollo de algoritmos predictivos',
-      description:
-        'Creación de modelos de análisis para anticipar tendencias y comportamientos del mercado.',
-      department: 'Departamento de R&D',
-      date: '23 Mar 2025',
-    },
-    {
-      title: 'Desarrollo de algoritmos predictivos',
-      description:
-        'Creación de modelos de análisis para anticipar tendencias y comportamientos del mercado.',
-      department: 'Departamento de R&D',
-      date: '23 Mar 2025',
-    },
-    {
-      title: 'Desarrollo de algoritmos predictivos',
-      description:
-        'Creación de modelos de análisis para anticipar tendencias y comportamientos del mercado.',
-      department: 'Departamento de R&D',
-      date: '23 Mar 2025',
-    },
-  ];
-
   const departments: DepartmentData[] = [
     {
       iconSrc: '/icons/research-icon.png',
@@ -92,7 +68,7 @@ export default function MainPage() {
     <div>
       <Header />
       <Banner />
-      <FeaturedProjectsSection projects={projectData} />
+      <FeaturedProjectsSection />
       <DepartmentsSection departments={departments} />
       <PostulationBanner />
       <Footer />
