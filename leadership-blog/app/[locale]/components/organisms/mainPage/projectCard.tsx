@@ -4,6 +4,7 @@ import Paragraph from '@/components/atoms/mainPage/paragraphDescriptionCard';
 import ProjectMeta from '@/components/molecules/mainPage/departmentNameCreationDateCard';
 import HeadingTitleCard from '@/components/atoms/mainPage/headingTitleCard';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface ProjectCardProps {
   id: number;
@@ -34,24 +35,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         .replace('mar', 'Mar') // Ejemplo para mantener consistencia con "Mar"
     : '';
   return (
-    <div
-      key={id}
-      className="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md dark:bg-[#3E3E3E]"
-    >
-      {imageSrc ? (
-        <Image src={imageSrc} alt={title} />
-      ) : (
-        <ImagePlaceholder className="h-40" />
-      )}
-      <div className="p-4">
-        <HeadingTitleCard level={3} className="mt-2" title={title} />
-        <Paragraph text={description} />
-        <ProjectMeta
-          departmentName={departmentName}
-          creationDate={formattedDate}
-        />
+    //Link to the project page. In development yet
+    <Link href={`/project/${id}`} passHref>
+      <div
+        key={id}
+        className="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md dark:bg-[#3E3E3E]"
+      >
+        {imageSrc ? (
+          <Image src={imageSrc} alt={title} />
+        ) : (
+          <ImagePlaceholder className="h-40" />
+        )}
+        <div className="p-4">
+          <HeadingTitleCard level={3} className="mt-2" title={title} />
+          <Paragraph text={description} />
+          <ProjectMeta
+            departmentName={departmentName}
+            creationDate={formattedDate}
+          />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
