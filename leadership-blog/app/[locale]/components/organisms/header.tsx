@@ -2,7 +2,9 @@
 import NavLinks from '../molecules/navLinks';
 import LogInButton from '../atoms/logInButton';
 import ChangeThemeButton from '../atoms/changeThemeButton';
+//import WhiteModeLogo from '../atoms/logo'; check later
 import { useTranslations } from 'next-intl';
+//import { DarkModeLogo } from '../atoms/logo'; check later
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
@@ -22,16 +24,14 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between bg-white px-8 py-4 text-black shadow-md transition-colors duration-300 dark:bg-[#3E3E3E] dark:text-white">
       <div className="flex items-center">
-        {mounted && ( //render logo only in client side to avoid hydration errors
-          <Image
-            src={logoSrc}
-            alt="Deinsa Global logo"
-            width={100}
-            height={100}
-            className="rounded"
-            priority
-          />
-        )}
+        <Image
+          src={logoSrc}
+          alt="Deinsa Global logo"
+          width={100}
+          height={100}
+          className="rounded"
+          priority
+        />
         <div className="ml-10">
           <NavLinks />
         </div>
