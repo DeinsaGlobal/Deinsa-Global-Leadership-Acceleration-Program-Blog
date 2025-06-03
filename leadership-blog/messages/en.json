@@ -31,5 +31,33 @@
     "newsletterDescription": "Subscribe to our newsletter to receive the latest news and updates from Deinsa Global.",
     "subscribeButton": "Subscribe",
     "deinsaDescription": "Interactive blog and activity repository for interns and departments"
+  },
+  "Banner": {
+    "title": "Deinsa Global interactive blog",
+    "description": "A space where each department shares its projects, tools and progress.",
+    "button": "Browse articles"
+  },
+  "mainpage": {
+    "titleDepartments": "Our Departments",
+    "ssa": "Sustainability and environmental solutions",
+    "ssaDescription": "The Sustainability and Environmental Solutions department focuses on developing innovative solutions to promote sustainability and reduce environmental impact.",
+    "rd": "Research and development",
+    "rdDescription": "The Research and Development department is dedicated to advancing technology and innovation to drive growth and improve efficiency.",
+    "sales": "Sales",
+    "salesDescription": "The Sales department is responsible for driving revenue growth and building strong relationships with customers.",
+    "laPlazaDescription": "La Plaza is a space where each department shares its projects, tools and progress.",
+    "rrcc": "Corporate Relations",
+    "rrccDescription": "The Corporate Relations department is responsible for managing relationships with stakeholders and ensuring effective communication.",
+    "hc": "Human Capital",
+    "hcDescription": "The Human Capital department focuses on talent management, employee development and organizational culture.",
+    "seeProyects": "See projects",
+    "postulationBannerDescription": "If you are interested in joining our team, please fill out the form below and we will get back to you as soon as possible.",
+    "postulationBannerButton": "Postulate now",
+    "postulationBannerTitle": "Join our team!",
+    "featuredProjectsTitle": "Featured Projects",
+    "featuredProjectsLoading": "Loading featured projects...",
+    "featuredProjectsError": "Error loading featured projects.",
+    "featuredProjectsEmpty": "No featured projects available at this time.",
+    "featuredProjectsSeeAll": "See more"
   }
 }
