@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         className="w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-md dark:bg-[#3E3E3E]"
       >
         {imageSrc ? (
-          <Image src={imageSrc} alt={title} />
+          <Image src={imageSrc} alt={title} width={10} height={10} />
         ) : (
           <ImagePlaceholder className="h-40" />
         )}
