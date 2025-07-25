@@ -1,3 +1,5 @@
+'use client';
+
 import NavLinks from '../molecules/navLinks';
 import LogInButton from '../atoms/logInButton';
 import ChangeThemeButton from '../atoms/changeThemeButton';

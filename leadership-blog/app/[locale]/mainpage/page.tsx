@@ -1,5 +1,3 @@
-'use client';
-
 import Header from '@/components/organisms/header';
 import Banner from '@/components/molecules/mainPage/banner';
 import DepartmentsSection from '@/components/organisms/mainPage/departmentsSection';
