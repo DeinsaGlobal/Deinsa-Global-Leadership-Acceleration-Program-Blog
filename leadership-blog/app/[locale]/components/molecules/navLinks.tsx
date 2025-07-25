@@ -5,9 +5,9 @@ export default function NavLinks() {
   const t = useTranslations('Header');
   return (
     <div className="hidden space-x-4 lg:flex">
-      <HeaderLink href="/about">{t('home')}</HeaderLink>
+      <HeaderLink href="/mainpage">{t('home')}</HeaderLink>
       <HeaderLink href="/blog">{t('blog')}</HeaderLink>
-      <HeaderLink href="/contact">{t('departments')}</HeaderLink>
+      <HeaderLink href="/departments">{t('departments')}</HeaderLink>
     </div>
   );
 }
