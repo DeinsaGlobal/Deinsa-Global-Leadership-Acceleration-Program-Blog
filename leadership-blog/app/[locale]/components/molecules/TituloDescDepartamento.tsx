@@ -16,7 +16,7 @@ export const TTDesc = ({iconSrc, iconAlt, title, desc}: DepCard) => {
 
     return (
         <div className="max-w-7xl mx-auto my-10">
-            <div className="bg-[#757575] rounded-2xl p-8 flex items-center gap-x-6 min-h-[299px]">
+            <div className="bg-[#757575] dark:bg-[#D9D9D9] rounded-2xl p-8 flex items-center gap-x-6 min-h-[299px]">
                 <div className="flex-shrink-0">
                     <IconoLog
                         src={'/icons/' + iconSrc}

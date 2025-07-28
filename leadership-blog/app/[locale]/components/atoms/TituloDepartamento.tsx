@@ -8,7 +8,7 @@ interface TituloDep {
 export const TituloDep = ({children}: TituloDep) => {
 
     return (
-         <h2 className="text-white text-[48px] font-bol">
+         <h2 className="text-white dark:text-[#000000] text-[48px] font-bol">
             {children}
         </h2>
     )
