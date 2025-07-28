@@ -1,12 +1,16 @@
 import serverClient from '@/_trpc/serverClient';
 import Link from 'next/link';
 
+
 export default async function DepartmentsPage() {
   const departments = await serverClient.department.getAll();
+
+  
 
   return (
     <div>
       <h1 className="mb-4 text-3xl font-bold">Departamentos</h1>
+    
       <ul>
         {departments.map((dep) => {
           const slug = dep.name
