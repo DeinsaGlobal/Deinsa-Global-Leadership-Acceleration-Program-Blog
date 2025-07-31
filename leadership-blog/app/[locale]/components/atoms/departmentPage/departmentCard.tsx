@@ -23,12 +23,7 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({
     <div className="max-auto flex h-[350px] flex-col items-start rounded-md shadow-md dark:bg-[#3E3E3E]">
       <PlaceHolder className="h-full w-full p-6">
         <div className="relative mb-4 h-10 w-10">
-          <Image
-            src={iconSrc}
-            alt={altText}
-            layout="fill"
-            objectFit="contain"
-          />
+          <Image src={iconSrc} alt={altText} fill className="object-contain" />
         </div>
         <h3 className="text-dark mb-2 text-xl font-semibold dark:text-white">
           {title}
@@ -39,7 +34,7 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({
       </p>
       <a
         href={link}
-        className="mt-5 ml-auto flex items-center rounded-full px-4 py-2 text-sm font-semibold text-black hover:bg-orange-600 dark:text-white"
+        className="mt-5 ml-96 flex items-center rounded-full px-4 py-2 text-sm font-semibold text-black hover:bg-orange-600 dark:text-white"
       >
         {t('seeDeparment')}
         <svg
