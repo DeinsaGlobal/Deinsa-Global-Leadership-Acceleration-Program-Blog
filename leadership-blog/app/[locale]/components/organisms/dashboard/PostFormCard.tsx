@@ -1,5 +1,6 @@
-// src/components/molecules/PostFormCard.tsx
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -20,8 +21,33 @@ import {
   Save,
   Upload,
 } from 'lucide-react';
+import { trpc } from '../../../../../[locale]/lib/trpc'; // Adjust the import path as necessary
 
 export function PostFormCard() {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [portraitImage, setPortraitImage] = useState('');
+
+  const createPost = trpc.post.create.useMutation({
+    onSuccess: () => {
+      setTitle('');
+      setContent('');
+      setPortraitImage('');
+      alert('Artículo publicado');
+    },
+    onError: () => {
+      alert('Error al publicar');
+    },
+  });
+
+  const handleSubmit = () => {
+    createPost.mutate({
+      title,
+      content,
+      portraitImage,
+    });
+  };
+
   return (
     <Card>
       <CardHeader>
@@ -33,7 +59,12 @@ export function PostFormCard() {
       <CardContent className="space-y-6">
         <div className="space-y-2">
           <Label htmlFor="title">Título</Label>
-          <Input id="title" placeholder="Ingresa el título del artículo" />
+          <Input
+            id="title"
+            placeholder="Ingresa el título del artículo"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </div>
 
         <div className="space-y-2">
@@ -42,18 +73,19 @@ export function PostFormCard() {
             id="description"
             placeholder="Breve descripción del artículo"
             rows={3}
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
           />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="category">Categoría</Label>
-          <select id="category" className="w-full rounded-md border px-3 py-2">
-            <option value="">Selecciona una categoría</option>
-            <option value="plaza-digital">Plaza Digital</option>
-            <option value="automatizacion">Automatización</option>
-            <option value="proyectos">Proyectos</option>
-            <option value="tecnologia">Tecnología</option>
-            <option value="colaboracion">Colaboración</option>
+          <select
+            id="category"
+            className="w-full rounded-md border px-3 py-2"
+            disabled
+          >
+            <option value="">(no implementado aún)</option>
           </select>
         </div>
 
@@ -71,6 +103,8 @@ export function PostFormCard() {
               id="content"
               placeholder="Escribe el contenido de tu artículo aquí..."
               className="min-h-[300px]"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
             />
           </div>
         </div>
@@ -82,15 +116,18 @@ export function PostFormCard() {
             <p className="text-muted-foreground text-sm">
               Arrastra una imagen o haz clic para seleccionar
             </p>
-            <Button variant="secondary" className="mt-2">
-              Seleccionar Archivo
-            </Button>
+            <Input
+              className="mt-2"
+              placeholder="URL de imagen"
+              value={portraitImage}
+              onChange={(e) => setPortraitImage(e.target.value)}
+            />
           </div>
         </div>
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="secondary">Guardar Borrador</Button>
-        <Button>
+        <Button onClick={handleSubmit} disabled={createPost.isPending}>
           <Save className="mr-2 h-4 w-4" />
           Publicar Artículo
         </Button>

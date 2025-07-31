@@ -39,13 +39,21 @@ export const postRouter = router({
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      return await ctx.prisma.post.create({
-        data: {
-          title: input.title,
-          content: input.content,
-          portraitImage: input.portraitImage,
-        },
-      });
+      try {
+        return await ctx.prisma.post.create({
+          data: {
+            title: input.title,
+            content: input.content,
+            portraitImage: input.portraitImage,
+          },
+        });
+      } catch (error) {
+        console.error('Error al crear post:', error);
+        if (process.env.NODE_ENV === 'development') {
+          throw error;
+        }
+        throw new Error('Error interno al crear el post.');
+      }
     }),
 
   update: procedure
