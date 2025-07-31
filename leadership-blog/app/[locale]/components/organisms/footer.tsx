@@ -1,3 +1,4 @@
+'use client';
 import ContactInfoFooter from '../atoms/contactInfoFooter';
 import FooterDepartmentsLinks from '../molecules/footerDepartmentsLinks';
 import DeinsaInfoFooter from '../atoms/deinsaInfoFooter';
