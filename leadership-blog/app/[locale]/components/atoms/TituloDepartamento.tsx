@@ -1,15 +1,13 @@
 import React from 'react';
 
 interface TituloDep {
-    children: React.ReactNode;
-    
+  children: React.ReactNode;
 }
 
-export const TituloDep = ({children}: TituloDep) => {
-
-    return (
-         <h2 className="text-white dark:text-[#000000] text-[48px] font-bol">
-            {children}
-        </h2>
-    )
-}
+export const TituloDep = ({ children }: TituloDep) => {
+  return (
+    <h2 className="font-bol text-[48px] text-white dark:text-[#000000]">
+      {children}
+    </h2>
+  );
+};

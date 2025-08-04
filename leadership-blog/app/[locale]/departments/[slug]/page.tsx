@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import serverClient from '@/_trpc/serverClient';
 import { TituloDepData } from '@/components/molecules/DepTD';
-//import { TTDesc } from '@/components/molecules/TituloDescDepartamento';
+import ListaNoticias from '@/components/organisms/NewsSearch';
 
 interface Props {
   params: Promise<{
@@ -28,10 +28,12 @@ export default async function DepartmentPage({ params }: Props) {
   console.log(department);
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold">{department.name}</h1>
-
+    <div className="space-y-8 p-6">
       <TituloDepData departmentId={department.id} />
+
+      <div className="flex flex-col items-center justify-center">
+        <ListaNoticias departmentId={department.id} />
+      </div>
     </div>
   );
 }
